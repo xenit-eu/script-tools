@@ -1,0 +1,17 @@
+# Permission to copy and modify is granted under the Apache License 2.0 
+# https://www.apache.org/licenses/LICENSE-2.0
+# Last revised 23/06/2021
+# Author: Zlatin Todorinski
+
+[Unit]
+Description=Create thread dump each 60 seconds
+
+[Service]
+Type=simple
+ExecStart=/$CATALINA_HOME/capture-thread-dumps-and-restart-alfresco-service.sh
+Restart=always
+RestartSec=60
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
